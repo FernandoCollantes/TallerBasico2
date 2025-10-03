@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos del Diseño de Interfaces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .dot {
+            transition: all 0.3s ease;
+        }
+        .dot.active {
+            width: 2rem;
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen p-4">
+    <div class="max-w-7xl mx-auto">
+        <div class="bg-white rounded-xl shadow-2xl p-12 mb-6 min-h-[600px]" id="slideContainer">
+            
+            <!-- Slide 1: Portada -->
+            <div class="slide active" data-slide="0">
+                <div class="flex flex-col items-center justify-center h-full space-y-8 text-center">
+                    <svg class="w-32 h-32 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-width="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9" stroke-width="2"/>
+                        <line x1="9" y1="21" x2="9" y2="9" stroke-width="2"/>
+                    </svg>
+                    <h1 class="text-6xl font-bold text-gray-800">Fundamentos del Diseño de Interfaces</h1>
+                    <h2 class="text-3xl text-gray-600">Principios Visuales, Jerarquía y Wireframes</h2>
+                    <p class="text-xl text-gray-500 mt-12">Willman Acosta Lugo</p>
+                </div>
+            </div>
+
+            <!-- Slide 2: Introducción -->
+            <div class="slide" data-slide="1">
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">¿Qué es el Diseño de Interfaces?</h2>
+                    <p class="text-2xl leading-relaxed">
+                        El diseño de interfaces digitales va mucho más allá de crear pantallas bonitas. 
+                        Se trata de construir <span class="font-bold text-blue-600">experiencias que funcionen</span>, 
+                        que guíen al usuario de forma intuitiva y que, además, resuelvan problemas reales.
+                    </p>
+                    <div class="bg-blue-50 p-8 rounded-lg border-l-4 border-blue-500">
+                        <p class="text-xl italic text-gray-700">
+                            "Estos principios no son caprichos estéticos, sino herramientas probadas que 
+                            facilitan la comunicación visual entre el sistema y quien lo utiliza."
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 mt-8">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <svg class="w-12 h-12 mx-auto mb-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="3" stroke-width="2"/>
+                            </svg>
+                            <p class="font-semibold">Principios Visuales</p>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <svg class="w-12 h-12 mx-auto mb-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/>
+                                <rect x="7" y="7" width="10" height="10" rx="1" stroke-width="2"/>
+                            </svg>
+                            <p class="font-semibold">Jerarquía</p>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <svg class="w-12 h-12 mx-auto mb-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-width="2"/>
+                                <polyline points="14 2 14 8 20 8" stroke-width="2"/>
+                            </svg>
+                            <p class="font-semibold">Wireframes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Los 4 Principios -->
+            <div class="slide" data-slide="2">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Los Cuatro Principios Fundamentales</h2>
+                    <p class="text-xl mb-8">
+                        Robin Williams identificó cuatro principios que son la columna vertebral de cualquier 
+                        composición visual efectiva:
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg shadow-md">
+                            <svg class="w-10 h-10 mb-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                            </svg>
+                            <h3 class="text-2xl font-bold text-purple-800 mb-2">Proximidad</h3>
+                            <p class="text-gray-700">Los elementos relacionados deben estar cerca unos de otros</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg shadow-md">
+                            <svg class="w-10 h-10 mb-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" stroke-width="2"/>
+                            </svg>
+                            <h3 class="text-2xl font-bold text-blue-800 mb-2">Alineación</h3>
+                            <p class="text-gray-700">Cada elemento necesita una relación visual con otro</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg shadow-md">
+                            <svg class="w-10 h-10 mb-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/>
+                            </svg>
+                            <h3 class="text-2xl font-bold text-green-800 mb-2">Repetición</h3>
+                            <p class="text-gray-700">Reutilizar elementos visuales de manera consistente</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg shadow-md">
+                            <svg class="w-10 h-10 mb-3 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m0 0v6m0-6h6m-6 0H4" stroke-width="2"/>
+                            </svg>
+                            <h3 class="text-2xl font-bold text-orange-800 mb-2">Contraste</h3>
+                            <p class="text-gray-700">Crear diferenciación para dirigir la atención</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Proximidad -->
+            <div class="slide" data-slide="3">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Principio de Proximidad</h2>
+                    <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+                        <p class="text-2xl font-semibold text-purple-800 mb-3">
+                            Los elementos relacionados deben estar cerca unos de otros
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            Basado en las Leyes de la Gestalt: nuestro cerebro agrupa automáticamente 
+                            objetos próximos en el espacio.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-8 mt-6">
+                        <div class="bg-red-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-red-700 mb-4 text-xl">❌ Sin proximidad</h4>
+                            <div class="space-y-6">
+                                <div class="bg-white p-3 rounded">Título del producto</div>
+                                <div class="bg-white p-3 rounded">39,99€</div>
+                                <div class="bg-white p-3 rounded">Descripción breve</div>
+                                <div class="bg-white p-3 rounded">Botón comprar</div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-4">Requiere esfuerzo cognitivo adicional</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-green-700 mb-4 text-xl">✓ Con proximidad</h4>
+                            <div class="bg-white p-4 rounded space-y-2">
+                                <div class="font-bold">Título del producto</div>
+                                <div class="text-2xl text-blue-600">39,99€</div>
+                                <div class="text-sm text-gray-600">Descripción breve del producto</div>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded mt-2 w-full">
+                                    Comprar ahora
+                                </button>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-4">Comprensión inmediata</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                        <p class="text-lg">
+                            <span class="font-bold">Clave:</span> Los espacios en blanco no son vacíos sin propósito, 
+                            sino separadores conceptuales que indican dónde termina una idea y comienza otra.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Alineación -->
+            <div class="slide" data-slide="4">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Principio de Alineación</h2>
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <p class="text-2xl font-semibold text-blue-800 mb-3">
+                            Nada debe colocarse arbitrariamente
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            Cada elemento necesita una relación visual con otro. La alineación crea 
+                            conexiones invisibles pero poderosísimas.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-4 mt-6">
+                        <div class="bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2">Izquierda</h4>
+                            <div class="text-left space-y-1 text-sm">
+                                <p>Línea 1</p>
+                                <p>Línea 2</p>
+                                <p>Línea 3</p>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-3">Natural para español</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2">Centrada</h4>
+                            <div class="text-center space-y-1 text-sm">
+                                <p>Línea 1</p>
+                                <p>Línea 2</p>
+                                <p>Línea 3</p>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-3">Formal y equilibrada</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow border-l-4 border-purple-500">
+                            <h4 class="font-bold mb-2">Derecha</h4>
+                            <div class="text-right space-y-1 text-sm">
+                                <p>Línea 1</p>
+                                <p>Línea 2</p>
+                                <p>Línea 3</p>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-3">Números y nav. secundaria</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow border-l-4 border-orange-500">
+                            <h4 class="font-bold mb-2">Justificada</h4>
+                            <div class="text-justify space-y-1 text-sm">
+                                <p>Línea uno ejemplo</p>
+                                <p>Línea dos ejemplo</p>
+                                <p>Línea tres ejemplo</p>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-3">Bordes limpios</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-6 rounded-lg mt-6">
+                        <p class="text-lg">
+                            <span class="font-bold">Importante:</span> Una buena alineación es prácticamente invisible 
+                            para el usuario final. No la nota conscientemente, pero su ausencia genera una sensación 
+                            inmediata de desorden.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Repetición -->
+            <div class="slide" data-slide="5">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Principio de Repetición</h2>
+                    <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                        <p class="text-2xl font-semibold text-green-800 mb-3">
+                            Reutilizar elementos visuales de manera consistente
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            La repetición aporta coherencia y unidad. No es monotonía, es el pegamento 
+                            que mantiene unida la experiencia del usuario.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h4 class="font-bold text-xl mb-4">Ejemplo de Sistema de Botones</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm text-gray-600 mb-2">Botón Primario</p>
+                                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                                    Acción Principal
+                                </button>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 mb-2">Botón Secundario</p>
+                                <button class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
+                                    Acción Secundaria
+                                </button>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 mb-2">Botón Terciario</p>
+                                <button class="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:border-gray-400 transition">
+                                    Acción Terciaria
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-4 italic">
+                            Misma altura y bordes redondeados, pero color diferente según jerarquía
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h5 class="font-bold mb-2">✓ Beneficios</h5>
+                            <ul class="text-sm space-y-1">
+                                <li>• Reduce carga cognitiva</li>
+                                <li>• Construye identidad de marca</li>
+                                <li>• Aumenta la confianza</li>
+                                <li>• Mejora la eficiencia</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h5 class="font-bold mb-2">⚠️ Cuidado</h5>
+                            <ul class="text-sm space-y-1">
+                                <li>• No repetir en exceso</li>
+                                <li>• Permitir variaciones controladas</li>
+                                <li>• Mantener flexibilidad</li>
+                                <li>• Evitar rigidez extrema</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Contraste -->
+            <div class="slide" data-slide="6">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Principio de Contraste</h2>
+                    <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                        <p class="text-2xl font-semibold text-orange-800 mb-3">
+                            Crear diferenciación para dirigir la atención
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            Si dos elementos son distintos, deben serlo de manera evidente. 
+                            Las diferencias tímidas solo generan confusión.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-lg">Tipos de Contraste</h4>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h5 class="font-semibold mb-2">1. Contraste Cromático</h5>
+                                <div class="flex gap-2 items-center">
+                                    <div class="w-16 h-16 bg-black rounded"></div>
+                                    <span class="text-2xl">vs</span>
+                                    <div class="w-16 h-16 bg-white border-2 border-gray-300 rounded"></div>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-2">Máximo contraste = Óptima legibilidad</p>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h5 class="font-semibold mb-2">2. Contraste Tipográfico</h5>
+                                <p class="text-3xl font-bold">Titular Bold 48px</p>
+                                <p class="text-base">Cuerpo regular 16px</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                                <h5 class="font-bold text-red-700 mb-2">⚠️ WCAG 2.1 - Nivel AA</h5>
+                                <ul class="text-sm space-y-2">
+                                    <li><span class="font-semibold">Texto normal:</span> Ratio 4.5:1 mínimo</li>
+                                    <li><span class="font-semibold">Texto grande:</span> Ratio 3:1 mínimo</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h5 class="font-semibold mb-2">3. Contraste Espacial</h5>
+                                <div class="bg-gray-100 p-8 rounded">
+                                    <div class="bg-blue-600 text-white p-4 rounded text-center font-bold">
+                                        Elemento Destacado
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-2">El espacio en blanco hace que destaque</p>
+                            </div>
+
+                            <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-300">
+                                <h5 class="font-bold mb-2">💡 Síndrome de Meares-Irlen</h5>
+                                <p class="text-sm">
+                                    Personas con dislexia pueden tener dificultad con texto negro sobre fondo blanco puro.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Jerarquía Visual -->
+            <div class="slide" data-slide="7">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Jerarquía Visual</h2>
+                    <div class="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500">
+                        <p class="text-2xl font-semibold text-indigo-800 mb-3">
+                            Organizar elementos según su importancia
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            El usuario debe saber instintivamente dónde mirar primero, qué acciones son 
+                            prioritarias y cómo navegar por la información.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h4 class="font-bold text-xl mb-4 text-center">Ejemplo de Jerarquía en una Página</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-600 text-white p-4 rounded-lg text-center">
+                                <h1 class="text-4xl font-bold">Título Principal</h1>
+                                <p class="text-sm mt-2 opacity-90">Mayor tamaño = Mayor importancia</p>
+                            </div>
+                            
+                            <div class="bg-blue-400 text-white p-3 rounded-lg">
+                                <h2 class="text-2xl font-semibold">Subtítulo o Sección</h2>
+                            </div>
+                            
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <p class="text-base leading-relaxed">
+                                    Cuerpo de texto con información detallada. Utiliza tamaño estándar 
+                                    para facilitar la lectura y mantener la jerarquía visual clara.
+                                </p>
+                            </div>
+                            
+                            <div class="flex gap-4">
+                                <button class="bg-green-600 text-white px-6 py-3 rounded-lg font-bold flex-1">
+                                    Acción Principal
+                                </button>
+                                <button class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg flex-1">
+                                    Acción Secundaria
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 mt-6">
+                        <div class="bg-purple-50 p-4 rounded-lg text-center">
+                            <p class="font-bold mb-2">Tamaño</p>
+                            <p class="text-sm">Grande = Importante</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg text-center">
+                            <p class="font-bold mb-2">Color</p>
+                            <p class="text-sm">Saturado = Destaca</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg text-center">
+                            <p class="font-bold mb-2">Posición</p>
+                            <p class="text-sm">Superior = Prioritario</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Conclusiones -->
+            <div class="slide" data-slide="8">
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Conclusiones</h2>
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Ideas Clave para Recordar</h3>
+                        <div class="space-y-4 text-lg">
+                            <div class="flex items-start gap-3">
+                                <span class="text-blue-600 text-2xl">✓</span>
+                                <p>Los cuatro principios fundamentales son herramientas probadas, no caprichos estéticos.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-purple-600 text-2xl">✓</span>
+                                <p>La jerarquía visual guía al usuario de forma intuitiva y reduce la carga cognitiva.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-600 text-2xl">✓</span>
+                                <p>Las estructuras modulares facilitan el desarrollo, mantenimiento y escalabilidad.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-orange-600 text-2xl">✓</span>
+                                <p>Los wireframes son esenciales para fallar rápido y barato antes de invertir en diseño visual.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-red-600 text-2xl">✓</span>
+                                <p>El diseño de interfaces efectivo es iterativo, basado en feedback y centrado en el usuario.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                        <p class="text-xl italic text-gray-700 text-center">
+                            "El diseño de interfaces no es magia ni inspiración divina; es, ante todo, 
+                            un ejercicio de pensamiento estructurado aplicado a la resolución de problemas 
+                            de comunicación visual."
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <p class="text-lg text-gray-700">
+                            Dominar estos fundamentos os permitirá crear interfaces significativamente más efectivas 
+                            que ayuden a los usuarios a lograr sus objetivos.
+                        </p>
+                        <p class="text-2xl font-bold text-blue-600 mt-6">
+                            ¡Ahora es vuestro turno de aplicar estos principios!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Preguntas -->
+            <div class="slide" data-slide="9">
+                <div class="flex flex-col items-center justify-center h-full space-y-12 text-center">
+                    <div class="space-y-6">
+                        <h1 class="text-6xl font-bold text-gray-800">¿Preguntas?</h1>
+                        <p class="text-2xl text-gray-600">Estoy aquí para resolver vuestras dudas</p>
+                    </div>
+
+                    <div class="space-y-6 max-w-2xl">
+                        <p class="text-2xl text-gray-500">
+                            Recordad: ¡la práctica hace al maestro!
+                        </p>
+                        <p class="text-3xl font-semibold text-blue-600">
+                            Seguid diseñando, iterando y aprendiendo 🚀
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="flex items-center justify-between bg-white rounded-lg shadow-lg p-4">
+            <button onclick="prevSlide()" id="prevBtn" class="flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition bg-blue-600 text-white hover:bg-blue-700">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <polyline points="15 18 9 12 15 6" stroke-width="2"/>
+                </svg>
+                Anterior
+            </button>
+
+            <div class="flex items-center gap-4">
+                <span class="text-gray-600 font-medium" id="slideCounter">1 / 10</span>
+                <div class="flex gap-1" id="dotsContainer"></div>
+            </div>
+
+            <button onclick="nextSlide()" id="nextBtn" class="flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition bg-blue-600 text-white hover:bg-blue-700">
+                Siguiente
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <polyline points="9 18 15 12 9 6" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 10;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideCounter = document.getElementById('slideCounter');
+        const dotsContainer = document.getElementById('dotsContainer');
+
+        function createDots() {
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'dot w-2 h-2 rounded-full bg-gray-300';
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateSlide() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide].classList.add('active');
+            
+            slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+            
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+            
+            if (currentSlide === 0) {
+                prevBtn.classList.add('bg-gray-200', 'text-gray-400', 'cursor-not-allowed');
+                prevBtn.classList.remove('bg-blue-600', 'text-white', 'hover:bg-blue-700');
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.classList.remove('bg-gray-200', 'text-gray-400', 'cursor-not-allowed');
+                prevBtn.classList.add('bg-blue-600', 'text-white', 'hover:bg-blue-700');
+                prevBtn.disabled = false;
+            }
+            
+            if (currentSlide === totalSlides - 1) {
+                nextBtn.classList.add('bg-gray-200', 'text-gray-400', 'cursor-not-allowed');
+                nextBtn.classList.remove('bg-blue-600', 'text-white', 'hover:bg-blue-700');
+                nextBtn.disabled = true;
+            } else {
+                nextBtn.classList.remove('bg-gray-200', 'text-gray-400', 'cursor-not-allowed');
+                nextBtn.classList.add('bg-blue-600', 'text-white', 'hover:bg-blue-700');
+                nextBtn.disabled = false;
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        createDots();
+        updateSlide();
+    </script>
+</body>
+</html>

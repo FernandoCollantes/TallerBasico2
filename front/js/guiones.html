@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ficha de Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+
+   <div class="container my-5">
+        <div class="card mx-auto" style="max-width: 600px;">
+            
+            <div class="card-body">
+                <h2 class="card-text"><strong><spam id = "nombre"></spam> </strong></h2>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6ka1pY8RIQQjAkeQm_yEg5agctX7AUj8NA&s">
+                <p class="card-text"> <strong> Descripción: </strong><spam id ="descripcion"></p>
+                <p class="card-text"> <strong> Stock: </strong><spam id ="stock"></p>
+                <p class="card-text"> <strong> Precio: </strong><spam id ="precio"></spam><spam> $</spam></p> 
+               <a href = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6ka1pY8RIQQjAkeQm_yEg5agctX7AUj8NA&s">Ver Producto</a>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="card mx-auto" style="max-width: 600px;">
+            <div class="card-body">
+                <h2 class="card-text"><strong><spam id = "nombre"></spam> </strong></h2>
+                <p class="card-text"> <strong> Stock: </strong><spam id ="stock"></p>
+                <p class="card-text"> <strong> Precio: </strong><spam id ="precio"></spam><spam> $$</spam></p> 
+                <a href = "https://ejemplo.com/camiseta-deportiva">Ver Producto</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+<script>
+    let producto = {
+        nombre: "Camiseta Deportiva",
+        stock: 25,
+        precio: 19.99,
+        descripcion: "camiseta bomba pa sali a corre",
+        url: "https://ejemplo.com/camiseta-deportiva"
+    };
+
+
+</script>
+
+<script>
+    let descripcion = document.getElementById("descripcion");
+    descripcion.innerText = producto.descripcion;
+     let precio = document.getElementById("precio");
+    precio.innerText = producto.precio;
+    
+</script>
+
+<script>
+    let nombre = document.getElementById("nombre");
+    nombre.innerText = producto.nombre;
+</script>
+
+<script>
+    let stock = document.getElementById("stock");
+    stock.innerText = producto.stock;
+</script>
+
+<script>
+    let url = document.getElementById("url");
+    url.innerText = producto.url;
+</script>
+
+
+</html>
